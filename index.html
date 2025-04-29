@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Han - Personal Homepage</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: min(800px, 90%);
+            margin: 0 auto;
+            padding: clamp(2rem, 5vw, 3rem) 1.5rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: min(200px, 50vw);
+            height: auto;
+            aspect-ratio: 200/260;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            object-fit: cover;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        img:hover {
+            transform: scale(1.03) rotate(-1deg);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+            margin: clamp(1.5rem, 4vw, 2rem) 0 1rem;
+            text-align: left;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: min(120px, 30%);
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, rgba(52,152,219,0) 100%);
+        }
+
+        .info-section {
+            margin: clamp(1.5rem, 4vw, 2rem) 0;
+            padding: clamp(1.25rem, 3vw, 1.5rem);
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .info-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52,152,219,0.15);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+            margin: clamp(1rem, 3vw, 1.5rem) 0;
+            position: relative;
+            padding-left: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: clamp(6px, 1.5vw, 8px);
+            height: 80%;
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        ul {
+            padding-left: 0;
+            margin: clamp(1rem, 3vw, 1.5rem) 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 0.75rem 0;
+            padding-left: clamp(2rem, 5vw, 2.5rem);
+            position: relative;
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+        }
+
+        li::before {
+            content: "»";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+            transform: rotate(10deg);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: clamp(1.5rem, 5vw, 2rem) 1rem;
+            }
+            
+            li {
+                padding-left: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            img {
+                width: min(160px, 65vw);
+            }
+            
+            h1::after {
+                width: 25%;
+            }
+
+            .info-section {
+                padding: 1.2rem;
+            }
+
+            li::before {
+                left: -0.25rem;
+            }
+        }
+
+        @media (hover: none) {
+            img:hover, 
+            .info-section:hover, 
+            li:hover::before {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/profile.jpg" alt="Yan Han's Profile Photo">
+    <h1>Yan Han</h1>
+
+    <div class="info-section">
+        <ul>
+            <li>Office Address: XUEFU BLVD 999, Information Engineering College of Nanchang University</li>
+            <li>Email: 270079832@qq.com</li>
+            <li>Educational Attainment: Postgraduate Student</li>
+            <li>Specialty: Computer Technology</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>Research</h2>
+        <ul>
+            <li>Artificial Intelligence</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>Personal Info</h2>
+        <ul>
+            <li>Interests: Fishing, Running</li>
+        </ul>
+    </div>
+</body>
+</html>
